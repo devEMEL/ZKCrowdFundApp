@@ -15,15 +15,12 @@ Save file (Ctrl + X + Y + Enter)
 
 ####
 
-3) Install and run script
+3) Install 
 
 
 ```bash
-chmod +x script.sh
 npm install
-npm install -g pm2
-pm2 start ./script.sh
-pm2 logs script
+node index.js
 ```
 
 
