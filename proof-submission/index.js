@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const fs = require("fs");
 const proof = require("./proof.json"); // Following the Risc Zero tutorial
 
+
+
 dotenv.config();
 
 const main = async() => {
