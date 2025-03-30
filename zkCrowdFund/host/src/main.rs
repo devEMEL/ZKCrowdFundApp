@@ -84,11 +84,14 @@ fn main() {
         .init();
 
 
-    let min_donation_amount: u64 = 50_000_000_000_000_000;
+    let min_donation_amount: i32 = 1;
+    let min_donation_amount_constant: i32 = 1;
 
     let env = ExecutorEnv::builder()
         .write(&min_donation_amount)
         .unwrap()
+	.write(&min_donation_amount_constant)
+	.unwrap()
         .build()
         .unwrap();
 
