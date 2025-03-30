@@ -11,9 +11,9 @@ use bincode;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ProofResponse{
     pub result: bool,
-    pub inner_hex: String,
-    pub journal_hex: String,
-    pub image_id_hex: String,
+    pub proof: String,
+    pub pub_inputs: String,
+    pub image_id: String,
 }
 
 fn main() {
@@ -45,10 +45,11 @@ fn main() {
 
     let proof_output = ProofResponse {
         result,
-        inner_hex,
-        journal_hex,
-        image_id_hex,
+        proof: "0x".to_owned()+&inner_hex,
+        pub_inputs: "0x".to_owned()+&journal_hex,
+        image_id: "0x".to_owned()+&image_id_hex,
     };
+
 
     verify_receipt
         .verify(GUEST_CODE_FOR_ZK_PROOF_ID)
@@ -57,8 +58,9 @@ fn main() {
     let proof_output_json = serde_json::to_string(&proof_output).unwrap();
     fs::write("proof.json", proof_output_json).unwrap();
     println!("{:?}", proof_output); 
-    
+
 }
+
 // RISC0_DEV_MODE=0 cargo run --release
 
 
@@ -75,9 +77,9 @@ fn main() {
 
 // #[derive(Serialize, Deserialize)]
 // pub struct ProofOutput{
-//     pub proof: String,
-//     pub pub_inputs: String,
-//     pub image_id: String,
+    // pub proof: String,
+    // pub pub_inputs: String,
+    // pub image_id: String,
 // }
 
 // fn main() {
