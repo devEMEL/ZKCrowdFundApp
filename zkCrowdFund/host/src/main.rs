@@ -6,11 +6,11 @@ use methods::{
 };
 use risc0_zkvm::{default_prover, ExecutorEnv};
 use hex;
-use bincode;
+// use bincode;
 use std::fs;
 
 #[derive(Debug, Serialize, Deserialize)]
-pub struct ProofResponse{
+pub struct ProofOutput{
     pub proof: String,
     pub pub_inputs: String,
     pub image_id: String,
