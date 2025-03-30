@@ -21,14 +21,17 @@ fn main() {
         .with_env_filter(tracing_subscriber::filter::EnvFilter::from_default_env())
         .init();
 
-    let min_donation_amount: u32 = 1;
-    let min_donation_amount_constant: u32 = 1;
+    // let min_donation_amount: u32 = 1;
+    // let min_donation_amount_constant: u32 = 1;
+
+    let a: u64 = 17;
+    let b: u64 = 23;
 
 
     let env = ExecutorEnv::builder()
-        .write(&min_donation_amount)
+        .write(&a)
         .unwrap()
-	    .write(&min_donation_amount_constant)
+	    .write(&b)
 	    .unwrap()
         .build()
         .unwrap();
@@ -39,7 +42,7 @@ fn main() {
         .unwrap();
     let receipt = prove_info.receipt;
 
-    let _output: u32 = receipt.journal.decode().unwrap();
+    let _output: u64 = receipt.journal.decode().unwrap();
 
     receipt
         .verify(GUEST_CODE_FOR_ZK_PROOF_ID)
