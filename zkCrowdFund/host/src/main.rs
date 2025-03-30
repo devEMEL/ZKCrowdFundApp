@@ -7,6 +7,7 @@ use methods::{
 use risc0_zkvm::{default_prover, ExecutorEnv};
 use hex;
 use bincode;
+use std::fs;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ProofResponse{
@@ -21,11 +22,15 @@ fn main() {
         .with_env_filter(tracing_subscriber::filter::EnvFilter::from_default_env())
         .init();
 
-    let min_donation_amount: u64 = 50_000_000_000_000_000;
+    let min_donation_amount: i32 = 1;
+    let min_donation_amount_constant: i32 = 1;
+
 
     let env = ExecutorEnv::builder()
         .write(&min_donation_amount)
         .unwrap()
+	.write(&min_donation_amount_constant)
+	.unwrap()
         .build()
         .unwrap();
 
