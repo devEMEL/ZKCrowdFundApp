@@ -7,13 +7,14 @@ use methods::{
 use risc0_zkvm::{default_prover, ExecutorEnv};
 use hex;
 use bincode;
+use std::fs;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ProofResponse{
     pub result: bool,
-    pub inner_hex: String,
     pub journal_hex: String,
     pub image_id_hex: String,
+    pub inner_hex: String,
 }
 
 fn main() {
@@ -49,9 +50,9 @@ fn main() {
 
     let proof_output = ProofResponse {
         result,
-        inner_hex,
         journal_hex,
         image_id_hex,
+	inner_hex,
     };
 
     verify_receipt
