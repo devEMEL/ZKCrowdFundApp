@@ -121,7 +121,7 @@ fn main() {
             .unwrap();
         let receipt = prove_info.receipt;
     
-        let _output: u64 = receipt.journal.decode().unwrap();
+        let _output: u32 = receipt.journal.decode().unwrap();
     
         receipt
             .verify(GUEST_CODE_FOR_ZK_PROOF_ID)
