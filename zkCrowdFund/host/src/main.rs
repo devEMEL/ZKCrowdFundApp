@@ -21,13 +21,9 @@ fn main() {
         .with_env_filter(tracing_subscriber::filter::EnvFilter::from_default_env())
         .init();
 
-<<<<<<< HEAD
-
     let min_donation_amount: i32 = 1;
     let min_donation_amount_constant: i32 = 1;
-=======
-    let min_donation_amount: u64 = 50_000_000_000_000_000;
->>>>>>> 8435eb1b721e7bf1bb51bd8bb467d52304b81906
+
 
     let env = ExecutorEnv::builder()
         .write(&min_donation_amount)
