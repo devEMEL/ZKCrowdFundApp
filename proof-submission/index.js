@@ -15,9 +15,9 @@ const main = async() => {
     const session = await zkVerifySession.start().Testnet().withAccount(process.env.ZKVERIFY_SEED_PHRASE);
     const {events, txResults} = await session.verify().risc0().waitForPublishedAttestation()
     .execute({proofData:{
-        proof: proof.inner_hex,
-        vk: proof.image_id_hex,
-        publicSignals: proof.journal_hex,
+        proof: proof.proof,
+        vk: proof.image_id,
+        publicSignals: proof.pub_inputs,
         version: "V1_2" // Mention the R0 version
     }});
 
