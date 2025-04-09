@@ -24,8 +24,9 @@ import hre from "hardhat";
     });
   
     describe("createCampaign", function () {
-        it("Inputs should be valid", async function () {
-            
+        it("It should create campaign successfully", async function () {
+            const { zkCrowdFund } = await loadFixture(deployZKCrowdFundFixture);
+  
         });
     });
 
