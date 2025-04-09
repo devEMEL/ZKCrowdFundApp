@@ -13,7 +13,6 @@ interface IZkVerifyAttestation {
 }
 
 contract ZKCrowdFund {
-    
 
     // zkVerify contract
     IZkVerifyAttestation public immutable zkVerify;  // sepolia =  0x209f82A06172a8d96CF2c95aD8c42316E80695c1
