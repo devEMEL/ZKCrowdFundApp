@@ -35,7 +35,7 @@ const config: HardhatUserConfig = {
       },
     },
     sepolia: {
-      url: `https://sepolia.infura.io/v3/${alchemyApiKey}`,
+      url: `https://eth-sepolia.g.alchemy.com/v2/${alchemyApiKey}`,
       accounts: [deployerPrivateKey],
 
     }

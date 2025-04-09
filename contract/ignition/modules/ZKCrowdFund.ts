@@ -14,3 +14,5 @@ const ZKCrowdFundModule = buildModule("ZKCrowdFund", (m) => {
 });
 
 export default ZKCrowdFundModule;
+
+// ca sepolia network = 0x234C315B4F9145033D90b747e2152CfF2455C4c2
